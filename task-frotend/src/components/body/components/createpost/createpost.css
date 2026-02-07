@@ -1,10 +1,11 @@
 .grandparent_createpost {
-    height: 200px;
+    overflow: hidden;
     border: solid red 1px;
+    margin: 10px 0px;
 }
 
 .parent_createpost {
     height: 100%;
-    height: 160px;
+    /* height: 160px; */
     border: solid red 1px;
 }

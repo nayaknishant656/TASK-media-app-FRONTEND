@@ -1,11 +1,12 @@
 import React from 'react'
 import './createpost.css'
-import CreatePost from './ui/createpostcard'
-export default function createpost() {
+import CreatePostCard from './ui/createpostcard'
+
+export default function CreatePost({ onPost }) {
     return (
         <div className="grandparent_createpost">
             <div className="parent_createpost">
-                <CreatePost />
+                <CreatePostCard onPost={onPost} />
             </div>
         </div>
     )
