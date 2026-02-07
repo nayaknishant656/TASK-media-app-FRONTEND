@@ -5,7 +5,7 @@ import LogoutPage from './components/logout/LogoutPage';
 import LoginPage from './components/auth/LoginPage';
 import RegisterPage from './components/auth/RegisterPage';
 import { AuthProvider, useAuth } from './context/AuthContext';
-
+import './App.css';
 function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();
   if (!isAuthenticated) {
