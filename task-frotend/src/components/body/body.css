@@ -1,6 +1,6 @@
 .grandparent_body {
-    height: 200px;
     border: solid red 1px;
+    margin: 10px 0px;
 }
 
 .parent_body {
