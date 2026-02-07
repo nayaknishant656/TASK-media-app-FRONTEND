@@ -1,0 +1,11 @@
+{
+    "buildCommand": "cd task-frotend && npm install && npm run build",
+    "outputDirectory": "task-frotend/build",
+    "framework": "create-react-app",
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/task-frotend/index.html"
+        }
+    ]
+}
