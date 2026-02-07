@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import CreatePost from './components/createpost/createpost';
 import Feed from './components/feed/feed';
 import { useAuth } from '../../context/AuthContext';
@@ -6,12 +6,12 @@ import API_BASE_URL from '../../config';
 
 export default function Body() {
     const [posts, setPosts] = useState([]);
-    const { token, login, isAuthenticated, logout } = useAuth();
+    const { token, isAuthenticated, logout } = useAuth();
     const API_URL = `${API_BASE_URL}/products`;
 
     // const handleDummyLogin = () => { ... } // Removed since handled in logout page
 
-    const fetchPosts = async () => {
+    const fetchPosts = useCallback(async () => {
         try {
             // Optional: Include token in fetch if the API requires it for reading
             const headers = {};
@@ -34,11 +34,11 @@ export default function Body() {
         } catch (error) {
             console.error('Error fetching posts:', error);
         }
-    };
+    }, [API_URL, logout, token]);
 
     useEffect(() => {
         fetchPosts();
-    }, [token]); // Refetch if token changes
+    }, [fetchPosts]); // Refetch if fetchPosts changes (which includes token)
 
     const handlePost = async (content) => {
         // ... (handlePost existing logic)

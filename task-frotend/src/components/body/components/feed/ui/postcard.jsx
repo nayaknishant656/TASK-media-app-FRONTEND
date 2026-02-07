@@ -37,7 +37,7 @@ export default function PostCard({ post }) {
         })
     );
 
-    const [isPending, startTransition] = useTransition();
+    const [, startTransition] = useTransition();
 
     const handleLike = () => {
         startTransition(async () => {
