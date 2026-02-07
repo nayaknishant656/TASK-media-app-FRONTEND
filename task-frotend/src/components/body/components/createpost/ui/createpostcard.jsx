@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './createpostcard.css';
 
-export default function createpostcard() {
+export default function CreatePostCard({ onPost }) {
+    const [content, setContent] = useState('');
+
+    const handlePostClick = () => {
+        if (content.trim()) {
+            onPost(content);
+            setContent(''); // Clear input after posting
+        }
+    };
+
     return (
         <div className='cp_card_parent'>
             <div className='cp_card'>
@@ -17,6 +26,8 @@ export default function createpostcard() {
                     <textarea
                         className='cp_textarea'
                         placeholder="What's on your mind?"
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)}
                     ></textarea>
                 </div>
 
@@ -63,7 +74,18 @@ export default function createpostcard() {
                     </div>
 
                     <div className='cp_actions_right'>
-                        <button className='cp_post_btn'>Post</button>
+                        <button
+                            className='cp_post_btn'
+                            onClick={handlePostClick}
+                            style={{
+                                backgroundColor: content.trim() ? '#1877F2' : '#E4E6EB',
+                                color: content.trim() ? 'white' : '#BCC0C4',
+                                cursor: content.trim() ? 'pointer' : 'not-allowed'
+                            }}
+                            disabled={!content.trim()}
+                        >
+                            Post
+                        </button>
                     </div>
                 </div>
             </div>

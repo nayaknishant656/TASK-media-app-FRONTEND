@@ -1,21 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/header/header';
 import Body from './components/body/body';
-import { AuthProvider } from './context/AuthContext';
-// import Footer from './components/footer/footer';
+import LogoutPage from './components/logout/LogoutPage';
+import { AuthProvider, useAuth } from './context/AuthContext';
+
+function ProtectedRoute({ children }) {
+  const { isAuthenticated } = useAuth();
+  if (!isAuthenticated) {
+    return <Navigate to="/logout" replace />;
+  }
+  return children;
+}
+
 function App() {
   return (
-    <AuthProvider>
-      <div className='grandparent_socialpage'>
-        <div className='parent_socialpage'>
-          <Header />
-          <Body />
-          {/* <Footer /> */}
+    <BrowserRouter>
+      <AuthProvider>
+        <div className='grandparent_socialpage'>
+          <div className='parent_socialpage'>
+            <Header />
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <ProtectedRoute>
+                    <Body />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/logout" element={<LogoutPage />} />
+            </Routes>
+            {/* <Footer /> */}
+          </div>
         </div>
-      </div>
-    </AuthProvider>
-
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 
