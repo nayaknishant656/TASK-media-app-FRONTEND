@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import CreatePost from './components/createpost/createpost';
 import Feed from './components/feed/feed';
 import { useAuth } from '../../context/AuthContext';
+import API_BASE_URL from '../../config';
 
 export default function Body() {
     const [posts, setPosts] = useState([]);
     const { token, login, isAuthenticated, logout } = useAuth();
-    const API_URL = 'http://localhost:5002/api/products';
+    const API_URL = `${API_BASE_URL}/products`;
 
     // const handleDummyLogin = () => { ... } // Removed since handled in logout page
 
