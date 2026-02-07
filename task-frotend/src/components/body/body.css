@@ -1,0 +1,9 @@
+.grandparent_body {
+    height: 200px;
+    border: solid red 1px;
+}
+
+.parent_body {
+    height: 100%;
+    border: solid red 1px;
+}

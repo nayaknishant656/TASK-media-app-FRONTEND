@@ -1,0 +1,9 @@
+.grandparent_feed {
+    /* height: 200px; - Removed to fit content */
+    border: solid red 1px;
+}
+
+.parent_feed {
+    /* height: 100%; */
+    border: solid red 1px;
+}

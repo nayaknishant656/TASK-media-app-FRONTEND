@@ -1,0 +1,174 @@
+/* Main Container */
+.cp_card_parent {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    /* Just for demo background contrast if needed */
+}
+
+/* Card Style */
+.cp_card {
+    background-color: white;
+    width: 100%;
+    /* max-width: 600px; */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Header Section */
+.cp_card_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cp_title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #050505;
+}
+
+.cp_tabs {
+    background-color: #f0f2f5;
+    padding: 4px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.cp_tab {
+    border: none;
+    background: transparent;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #65676B;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+.cp_tab.active {
+    background-color: #1877F2;
+    color: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cp_tab:hover:not(.active) {
+    background-color: #e4e6eb;
+}
+
+/* Body / Textarea Section */
+.cp_card_body {
+    margin-bottom: 10px;
+}
+
+.cp_textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    outline: none;
+    font-size: 18px;
+    color: #050505;
+    min-height: 80px;
+    font-family: inherit;
+}
+
+.cp_textarea::placeholder {
+    color: #65676B;
+}
+
+/* Separator Line */
+.cp_separator {
+    height: 1px;
+    background-color: #e4e6eb;
+    /* Very light gray */
+    margin: 10px 0 15px 0;
+    width: 100%;
+}
+
+/* Footer Section */
+.cp_card_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cp_actions_left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cp_icon_wrapper {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.cp_icon_wrapper:hover {
+    background-color: #f0f2f5;
+}
+
+.cp_icon {
+    width: 24px;
+    height: 24px;
+    stroke: #1877F2;
+    /* Facebook Blue */
+    stroke-width: 2;
+}
+
+/* Promote Special Styling */
+.cp_promote_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.cp_promote_wrapper:hover {
+    background-color: #f0f2f5;
+}
+
+.cp_promote_text {
+    color: #1877F2;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Post Button */
+.cp_post_btn {
+    background-color: #E4E6EB;
+    /* Disabled gray look */
+    color: #BCC0C4;
+    /* Disabled text gray */
+    border: none;
+    padding: 8px 10px;
+    min-width: 80px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: not-allowed;
+    transition: all 0.2s;
+}
+
+/* If we want to simulate enabled state later:
+.cp_post_btn:not(:disabled) {
+    background-color: #1877F2;
+    color: white;
+    cursor: pointer;
+} 
+*/
