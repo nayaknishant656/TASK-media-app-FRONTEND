@@ -3,7 +3,6 @@
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 15px;
-    border: 1px solid #e1e3e8;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
@@ -41,4 +40,123 @@
     color: #050505;
     white-space: pre-wrap;
     word-wrap: break-word;
+}
+
+.pc_footer {
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.pc_actions {
+    display: flex;
+    gap: 5px;
+}
+
+.pc_action_btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #65676B;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    width: 100%;
+    justify-content: center;
+}
+
+.pc_action_btn:hover {
+    background-color: #f0f2f5;
+}
+
+.pc_action_btn.like_active {
+    color: #e0245e;
+}
+
+.pc_action_btn.comment_active {
+    color: #1877f2;
+}
+
+/* Comments Section */
+.pc_comments_section {
+    padding-top: 12px;
+    margin-top: 8px;
+    border-top: 1px solid #f0f2f5;
+}
+
+.pc_comments_list {
+    margin-bottom: 12px;
+}
+
+.pc_comment_item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.pc_comment_avatar img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.pc_comment_content {
+    background-color: #f0f2f5;
+    padding: 8px 12px;
+    border-radius: 18px;
+    flex: 1;
+}
+
+.pc_comment_user {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #050505;
+    margin-bottom: 2px;
+}
+
+.pc_comment_text {
+    font-size: 14px;
+    color: #050505;
+    margin: 0;
+}
+
+.pc_comment_input_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pc_comment_input_wrapper img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.pc_comment_input_wrapper input {
+    flex: 1;
+    background-color: #f0f2f5;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+}
+
+.pc_comment_input_wrapper button {
+    background: none;
+    border: none;
+    color: #1877f2;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.pc_comment_input_wrapper button:disabled {
+    color: #bcc0c4;
+    cursor: not-allowed;
 }
