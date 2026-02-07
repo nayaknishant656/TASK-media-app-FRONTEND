@@ -5,7 +5,7 @@ import { useAuth } from '../../context/AuthContext';
 
 export default function Body() {
     const [posts, setPosts] = useState([]);
-    const { token, login, isAuthenticated } = useAuth();
+    const { token, login, isAuthenticated, logout } = useAuth();
     const API_URL = 'http://localhost:5002/api/products';
 
     // const handleDummyLogin = () => { ... } // Removed since handled in logout page
@@ -26,6 +26,7 @@ export default function Body() {
             } else if (response.status === 401 || response.status === 403) {
                 // Handle failed auth here too if needed, but ProtectedRoute covers initial load
                 console.error('Auth failed during fetch');
+                logout(); // Log out if token is invalid or expired
             } else {
                 console.error('Failed to fetch posts');
             }
@@ -63,6 +64,10 @@ export default function Body() {
             if (response.ok) {
                 console.log('Post created successfully');
                 fetchPosts(); // Refresh feed
+            } else if (response.status === 401 || response.status === 403) {
+                console.error('Auth failed during post creation');
+                logout();
+                alert("Your session has expired. Please login again.");
             } else {
                 console.error('Failed to create post');
             }

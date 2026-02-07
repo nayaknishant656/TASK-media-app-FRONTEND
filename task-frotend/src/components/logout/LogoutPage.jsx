@@ -1,17 +1,12 @@
 import React from 'react';
-import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import './logout.css';
 
 export default function LogoutPage() {
-    const { login } = useAuth();
     const navigate = useNavigate();
 
-    const handleDummyLogin = () => {
-        // Simulating receiving a token from server
-        const dummyToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.dummy_payload.dummy_signature";
-        login(dummyToken);
-        navigate('/'); // Redirect to home after login
+    const handleLoginRedirect = () => {
+        navigate('/login');
     };
 
     return (
@@ -21,10 +16,10 @@ export default function LogoutPage() {
                 <p>Please log in to continue using the application.</p>
 
                 <button
-                    onClick={handleDummyLogin}
+                    onClick={handleLoginRedirect}
                     className="login_btn"
                 >
-                    Login (Demo)
+                    Go to Login
                 </button>
             </div>
         </div>
