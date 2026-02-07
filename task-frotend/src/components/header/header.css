@@ -1,9 +1,37 @@
 .grandparent_header {
-    height: 200px;
+    height: 80px;
+    /* Reduced height for a more standard header look, or keep 200px if desired but 80 is better for 'top' */
     border: solid red 1px;
+    margin-bottom: 10px;
 }
 
 .parent_header {
     height: 100%;
     border: solid red 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #fff;
+}
+
+.header_title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1877F2;
+}
+
+.logout_btn {
+    padding: 8px 16px;
+    background-color: #e4e6eb;
+    color: #050505;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.logout_btn:hover {
+    background-color: #d8dadf;
 }
