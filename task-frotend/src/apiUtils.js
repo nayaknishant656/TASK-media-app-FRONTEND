@@ -1,4 +1,3 @@
-import API_BASE_URL from './config';
 
 const authenticatedFetch = async (url, options = {}) => {
     const token = localStorage.getItem('token');

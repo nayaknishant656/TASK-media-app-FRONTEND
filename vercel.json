@@ -1,5 +1,5 @@
 {
-    "buildCommand": "cd task-frotend && npm install && npm run build",
+    "buildCommand": "cd task-frotend && npm install --legacy-peer-deps && CI=false npm run build",
     "outputDirectory": "task-frotend/build",
     "framework": "create-react-app",
     "rewrites": [

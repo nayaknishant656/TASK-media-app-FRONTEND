@@ -7,7 +7,7 @@ import authenticatedFetch from '../../apiUtils';
 
 export default function Body() {
     const [posts, setPosts] = useState([]);
-    const { token, isAuthenticated, logout } = useAuth();
+    const { isAuthenticated } = useAuth();
     const API_URL = `${API_BASE_URL}/products`;
 
     const fetchPosts = useCallback(async () => {
