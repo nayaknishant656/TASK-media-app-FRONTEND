@@ -74,7 +74,7 @@ export default function PostCard({ post }) {
                     <img src={`https://ui-avatars.com/api/?name=User&background=random`} alt="Profile" />
                 </div>
                 <div className="pc_user_info">
-                    <span className="pc_name">User</span>
+                    <span className="pc_name">{post.name}</span>
                     <span className="pc_date">{date}</span>
                 </div>
             </div>
