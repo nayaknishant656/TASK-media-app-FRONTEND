@@ -29,8 +29,25 @@ export default function LoginPage() {
             if (response.ok) {
                 // Assuming the API returns the token in a 'token' field
                 if (data.token) {
-                    login(data.token);
-                    navigate('/');
+                    // Send the token to the fetch products endpoint for verification
+                    try {
+                        const verifyRes = await fetch(`${API_BASE_URL}/products`, {
+                            headers: {
+                                'x-auth-token': data.token
+                            }
+                        });
+
+                        if (verifyRes.ok) {
+                            login(data.token);
+                            navigate('/');
+                        } else {
+                            console.error("Token verification failed at products endpoint", verifyRes.status);
+                            alert("Login successful, but token verification failed. Please contact support.");
+                        }
+                    } catch (error) {
+                        console.error("Error during token verification fetch", error);
+                        alert("Verification error. Please try again.");
+                    }
                 } else {
                     console.error("Login successful but no token received");
                     alert("Login failed: Server Error");
