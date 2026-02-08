@@ -6,6 +6,7 @@ import LogoutPage from './components/logout/LogoutPage';
 import LoginPage from './components/auth/LoginPage';
 import RegisterPage from './components/auth/RegisterPage';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import API_BASE_URL from './config';
 import './App.css';
 function ProtectedRoute({ children }) {
   const { isAuthenticated, token, logout } = useAuth();
@@ -21,7 +22,7 @@ function ProtectedRoute({ children }) {
       }
 
       try {
-        const API_URL = `${process.env.REACT_APP_API_URL || 'https://task-media-app-backend.vercel.app/api'}/products`;
+        const API_URL = `${API_BASE_URL}/products`;
         const response = await fetch(API_URL, {
           headers: { 'x-auth-token': token }
         });

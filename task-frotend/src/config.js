@@ -1,3 +1,3 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://task-media-app-backend.vercel.app/api';
+const API_BASE_URL = 'https://task-media-app-backend-w1fl.vercel.app/api';
 
 export default API_BASE_URL;
