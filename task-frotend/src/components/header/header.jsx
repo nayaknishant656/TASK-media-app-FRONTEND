@@ -14,7 +14,7 @@ export default function Header() {
     return (
         <div className="grandparent_header">
             <div className="parent_header">
-                <div className="header_title">My App</div>
+                <div className="header_title">Task Planet</div>
                 {isAuthenticated && (
                     <button onClick={handleLogout} className="logout_btn">
                         Logout
